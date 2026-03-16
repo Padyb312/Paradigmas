@@ -133,19 +133,16 @@ public class Principal {
 		System.out.println(trajes[1].calcularProtecion());
 
 		// Punto2
-
-		
-		// Punto2
 		System.out.println("\n=== MÉTODO 1: compararProteccion(Traje t) ===");
 		traje1.compararProteccion(trajeCombate1);
 
 		System.out.println("\n=== MÉTODO 2: trajeConMayorOxigeno(Traje t) ===");
 		Traje resultado = trajeExploracion1.trajeConMayorOxigeno(trajeCombate1);
-		System.out.println("Traje con mayor oxígeno: [" + resultado.getNumero_traje()
-		        + "] - Oxígeno: " + resultado.getCantidad_oxigeno() + " L");
+		System.out.println("Traje con mayor oxígeno: [" + resultado.getNumero_traje() + "] - Oxígeno: "
+				+ resultado.getCantidad_oxigeno() + " L");
 		// Punto3
-		//Atributo estatico en clase traje linea 12 nivel de protecion paquete modelo
-		//Metodo creado en traje paquete modelo
-		//Clase sin herencia combustible paquete modelo
+		// Atributo estatico en clase traje linea 12 nivel de protecion paquete modelo
+		// Metodo creado en traje paquete modelo
+		// Clase sin herencia combustible paquete modelo
 	}
 }
