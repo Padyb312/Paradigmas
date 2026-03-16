@@ -9,7 +9,7 @@ public class Traje {
 	private String numero_traje;
 	private String lugar_fabricacion;
 	private Astronauta astronauta;
-	private double nivel_proteccion_radiacion;
+	private static double nivel_proteccion_radiacion;
 	private double resistencia_impactos;
 	private double tiempo_uso;
 	private double capacidad_oxigeno;
@@ -18,15 +18,14 @@ public class Traje {
 
 	// Constructor sobrecargado
 	public Traje(String material, double peso, double altura, String numero_traje, String lugar_fabricacion,
-			Astronauta astronauta, double nivel_proteccion_radiacion, double resistencia_impactos, double tiempo_uso,
-			double capacidad_oxigeno, double cantidad_oxigeno, double desgaste) {
+			Astronauta astronauta, double resistencia_impactos, double tiempo_uso, double capacidad_oxigeno,
+			double cantidad_oxigeno, double desgaste) {
 		this.material = material;
 		this.peso = peso;
 		this.altura = altura;
 		this.numero_traje = numero_traje;
 		this.lugar_fabricacion = lugar_fabricacion;
 		this.astronauta = astronauta;
-		this.nivel_proteccion_radiacion = nivel_proteccion_radiacion;
 		this.resistencia_impactos = resistencia_impactos;
 		this.tiempo_uso = tiempo_uso;
 		this.capacidad_oxigeno = capacidad_oxigeno;
@@ -91,12 +90,12 @@ public class Traje {
 		this.astronauta = astronauta;
 	}
 
-	public double getNivel_proteccion_radiacion() {
+	public static double getNivel_proteccion_radiacion() {
 		return nivel_proteccion_radiacion;
 	}
 
-	public void setNivel_proteccion_radiacion(double nivel_proteccion_radiacion) {
-		this.nivel_proteccion_radiacion = nivel_proteccion_radiacion;
+	public static void setNivel_proteccion_radiacion(double nivel_proteccion_radiacion) {
+		Traje.nivel_proteccion_radiacion = nivel_proteccion_radiacion;
 	}
 
 	public double getResistencia_impactos() {
@@ -158,6 +157,33 @@ public class Traje {
 	public double calcularProtecion(double n, double h) {
 		return nivel_proteccion_radiacion - (n + h);
 
+	}
+
+	public final double astronautaAltura(Astronauta nom) {
+		double altura = nom.getAltura();
+		return altura;
+	}
+
+	// MÉTODO 1: recibe parámetro de tipo supersuperclase (Traje)
+	// Compara la protección de este traje con otro recibido como parámetro
+	public void compararProteccion(Traje t) {
+		System.out.println("Traje [" + this.numero_traje + "] - Protección: " + this.calcularProtecion());
+		System.out.println("Traje [" + t.getNumero_traje() + "] - Protección: " + t.calcularProtecion());
+		if (this.calcularProtecion() > t.calcularProtecion()) {
+			System.out.println("Mayor protección: [" + this.numero_traje + "]");
+		} else {
+			System.out.println("Mayor protección: [" + t.getNumero_traje() + "]");
+		}
+	}
+
+	// MÉTODO 2: retorna tipo supersuperclase (Traje)
+	// Retorna el traje con mayor cantidad de oxígeno entre este y el recibido
+	public Traje trajeConMayorOxigeno(Traje t) {
+		if (this.cantidad_oxigeno >= t.getCantidad_oxigeno()) {
+			return this;
+		} else {
+			return t;
+		}
 	}
 
 }

@@ -6,10 +6,10 @@ public class TrajeDeCombate extends Traje {
 
 	// Constructor sobrecargado
 	public TrajeDeCombate(String material, double peso, double altura, String numero_traje, String lugar_fabricacion,
-			Astronauta astronauta, double nivel_proteccion_radiacion, double resistencia_impactos, double tiempo_uso,
-			double capacidad_oxigeno, double cantidad_oxigeno, double desgaste, int cantidadDeArmas) {
-		super(material, peso, altura, numero_traje, lugar_fabricacion, astronauta, nivel_proteccion_radiacion,
-				resistencia_impactos, tiempo_uso, capacidad_oxigeno, cantidad_oxigeno, desgaste);
+			Astronauta astronauta, double resistencia_impactos, double tiempo_uso, double capacidad_oxigeno,
+			double cantidad_oxigeno, double desgaste, int cantidadDeArmas) {
+		super(material, peso, altura, numero_traje, lugar_fabricacion, astronauta, resistencia_impactos, tiempo_uso,
+				capacidad_oxigeno, cantidad_oxigeno, desgaste);
 		this.cantidadDeArmas = cantidadDeArmas;
 	}
 
@@ -33,4 +33,7 @@ public class TrajeDeCombate extends Traje {
 		return super.calcularProtecion() + ((double) cantidadDeArmas * 0.5);
 
 	}
+
+
+
 }

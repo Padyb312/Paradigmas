@@ -1,6 +1,6 @@
 package co.edu.poli.contexto4.modelo;
 
-public class Combustible {
+public final class Combustible {
 
 	private String tipo_combustible;
 	private String marca;

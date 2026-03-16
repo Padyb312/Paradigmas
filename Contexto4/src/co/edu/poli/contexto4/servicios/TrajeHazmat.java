@@ -7,11 +7,10 @@ public class TrajeHazmat extends Traje {
 	private int tiempoMaximoExposicion;
 
 	public TrajeHazmat(String material, double peso, double altura, String numeroTraje, String lugarFabricacion,
-			Astronauta astronauta, double nivelProteccionRadiacion, double resistenciaImpactos, double tiempoUso,
-			double capacidadOxigeno, double cantidadOxigeno, double desgaste, String tipoMaterialPeligroso,
-			int tiempoMaximoExposicion) {
-		super(material, peso, altura, numeroTraje, lugarFabricacion, astronauta, nivelProteccionRadiacion,
-				resistenciaImpactos, tiempoUso, capacidadOxigeno, cantidadOxigeno, desgaste);
+			Astronauta astronauta, double resistenciaImpactos, double tiempoUso, double capacidadOxigeno,
+			double cantidadOxigeno, double desgaste, String tipoMaterialPeligroso, int tiempoMaximoExposicion) {
+		super(material, peso, altura, numeroTraje, lugarFabricacion, astronauta, resistenciaImpactos, tiempoUso,
+				capacidadOxigeno, cantidadOxigeno, desgaste);
 		this.tipoMaterialPeligroso = tipoMaterialPeligroso;
 		this.tiempoMaximoExposicion = tiempoMaximoExposicion;
 	}
