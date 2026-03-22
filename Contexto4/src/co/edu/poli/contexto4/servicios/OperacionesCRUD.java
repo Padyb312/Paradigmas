@@ -1,13 +1,16 @@
 package co.edu.poli.contexto4.servicios;
 
-import java.util.Iterator;
+import co.edu.poli.contexto4.modelo.Traje;
 
 public interface OperacionesCRUD {
 
-	public String crear(TrajeHazmat traje) ;
+	public String crear(Traje objeto);
 
-	public String leeruno(int indice) ;
+	public Traje leeruno(int indice);
+
+	public Traje[] leertodos();
+
+	public String modificar(int indice, Traje objeto);
 	
-
-	public String leertodos() ;
+	public Traje eliminar(int indice);
 }
