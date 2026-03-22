@@ -6,7 +6,7 @@ public class Hospital {
 	private double tamano;
 	private String ubicacion;
 	private String registro_hospital;
-	private double es_publico;
+	private boolean es_publico;
 	private String color;
 	private int capacidad;
 	private double es_disponible;
@@ -19,7 +19,7 @@ public class Hospital {
 	private Doctor[] doctor;
 
 	// Constructor sobrecargado
-	public Hospital(int nivel_hospital, double tamano, String ubicacion, String registro_hospital, double es_publico,
+	public Hospital(int nivel_hospital, double tamano, String ubicacion, String registro_hospital, boolean es_publico,
 			String color, int capacidad, double es_disponible, int numero_empleados, int numero_pacientes,
 			int numero_consultorios, int numero_camas, int numero_banos, String especialidad, Doctor[] doctor) {
 		this.nivel_hospital = nivel_hospital;
@@ -72,11 +72,11 @@ public class Hospital {
 		this.registro_hospital = registro_hospital;
 	}
 
-	public double getEs_publico() {
+	public boolean isEs_publico() {
 		return es_publico;
 	}
 
-	public void setEs_publico(double es_publico) {
+	public void setEs_publico(boolean es_publico) {
 		this.es_publico = es_publico;
 	}
 

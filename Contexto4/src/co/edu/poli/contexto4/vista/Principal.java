@@ -21,7 +21,7 @@ public class Principal {
 				"Radiología", "NASA", 101, 2, null);
 
 		// Hospital
-		Hospital hospital1 = new Hospital(2, 850.5, "Bogotá Centro", "REG-2024-001", 1.0, "Blanco", 200, 1.0, 150, 80,
+		Hospital hospital1 = new Hospital(2, 850.5, "Bogotá Centro", "REG-2024-001", true, "Blanco", 200, 1.0, 150, 80,
 				20, 100, 15, "Cardiología", null);
 
 		// Astronauta
@@ -79,7 +79,7 @@ public class Principal {
 
 		// Combustible
 		Combustible combustible1 = new Combustible("Hidrógeno Líquido", "Shell Aero", "20/01/2026", "Refinería Houston",
-				"C-882", 5000.0, 0.07, 350.0, 12000.0, "Logística Aero", 6000.0, 5000.0);
+				 5000.0, 0.07, 350.0, 12000.0, "Logística Aero", 6000.0, 5000.0);
 		/*
 		 * // Sobrescritura System.out.println(traje1.calcularProtecion());
 		 * System.out.println(trajeCombate1.calcularProtecion());
@@ -123,7 +123,7 @@ public class Principal {
 		// Actividad_6
 		// Punto1
 		TrajeExploracion trajeExploracion1 = new TrajeExploracion("Kevlar-Polimero", 28.5, 1.80, "TE-202",
-				"Cabo Canaveral", astronauta1, 8.5, 7.0, 80.0, 85.0, 70.0, 2.5, 15.0);
+				"Cabo Canaveral", astronauta1, 8.5, 7.0, 80.0, 85.0, 70.0);
 		Traje[] trajes = new Traje[5];
 		trajes[0] = traje1;
 		trajes[1] = trajeCombate1;

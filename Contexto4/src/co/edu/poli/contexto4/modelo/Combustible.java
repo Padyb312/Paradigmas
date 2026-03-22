@@ -6,7 +6,6 @@ public final class Combustible {
 	private String marca;
 	private String fecha_obtencion;
 	private String lugar_extraccion;
-	private String numero_lote;
 	private double cantidad;
 	private double densidad;
 	private double peso;
@@ -17,13 +16,12 @@ public final class Combustible {
 
 	// Constructor sobrecargado
 	public Combustible(String tipo_combustible, String marca, String fecha_obtencion, String lugar_extraccion,
-			String numero_lote, double cantidad, double densidad, double peso, double precio,
-			String nombre_transportista, double capacidad_combustible, double cantidad_combustible) {
+			double cantidad, double densidad, double peso, double precio, String nombre_transportista,
+			double capacidad_combustible, double cantidad_combustible) {
 		this.tipo_combustible = tipo_combustible;
 		this.marca = marca;
 		this.fecha_obtencion = fecha_obtencion;
 		this.lugar_extraccion = lugar_extraccion;
-		this.numero_lote = numero_lote;
 		this.cantidad = cantidad;
 		this.densidad = densidad;
 		this.peso = peso;
@@ -64,14 +62,6 @@ public final class Combustible {
 
 	public void setLugar_extraccion(String lugar_extraccion) {
 		this.lugar_extraccion = lugar_extraccion;
-	}
-
-	public String getNumero_lote() {
-		return numero_lote;
-	}
-
-	public void setNumero_lote(String numero_lote) {
-		this.numero_lote = numero_lote;
 	}
 
 	public double getCantidad() {
@@ -134,7 +124,7 @@ public final class Combustible {
 	public String toString() {
 		return "Combustible{" + "tipo_combustible='" + tipo_combustible + '\'' + ", marca='" + marca + '\''
 				+ ", fecha_obtencion='" + fecha_obtencion + '\'' + ", lugar_extraccion='" + lugar_extraccion + '\''
-				+ ", numero_lote='" + numero_lote + '\'' + ", cantidad=" + cantidad + ", densidad=" + densidad
+				+ "  cantidad=" + cantidad + ", densidad=" + densidad
 				+ ", peso=" + peso + ", precio=" + precio + ", nombre_transportista='" + nombre_transportista + '\''
 				+ ", capacidad_combustible=" + capacidad_combustible + ", cantidad_combustible=" + cantidad_combustible
 				+ '}';
