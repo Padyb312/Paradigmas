@@ -36,4 +36,16 @@ public class TrajeHazmat extends Traje {
 		return "TrajeHazmat{" + "tipoMaterialPeligroso='" + tipoMaterialPeligroso + '\'' + ", tiempoMaximoExposicion="
 				+ tiempoMaximoExposicion + ", " + super.toString() + '}';
 	}
+
+	@Override
+	public double aumentarOxigeno() {
+		double cantidad = getCantidad_oxigeno();
+		double capacidad = getCapacidad_oxigeno();
+		if (3+cantidad < capacidad) {
+			
+			setCantidad_oxigeno(cantidad);
+		}
+		return cantidad;
+	}
+
 }

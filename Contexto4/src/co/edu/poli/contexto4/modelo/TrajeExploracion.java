@@ -9,9 +9,17 @@ public class TrajeExploracion extends Traje {
 				capacidad_oxigeno, cantidad_oxigeno, desgaste);
 	}
 
-	// Constructor sobrecargado
+	@Override
+	public double aumentarOxigeno() {
+		double cantidad = getCantidad_oxigeno();
+		double capacidad = getCapacidad_oxigeno();
+		if (2+cantidad < capacidad) {
+			
+			setCantidad_oxigeno(cantidad);
+		}
+		return cantidad;
+	}
 	
-
+		
 	
-
 }

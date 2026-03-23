@@ -34,6 +34,15 @@ public class TrajeDeCombate extends Traje {
 
 	}
 
-
+	@Override
+	public double aumentarOxigeno() {
+		double cantidad = getCantidad_oxigeno();
+		double capacidad = getCapacidad_oxigeno();
+		if (++cantidad < capacidad) {
+			
+			setCantidad_oxigeno(cantidad);
+		}
+		return cantidad;
+	}
 
 }

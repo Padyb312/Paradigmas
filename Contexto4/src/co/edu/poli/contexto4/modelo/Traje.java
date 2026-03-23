@@ -1,6 +1,6 @@
 package co.edu.poli.contexto4.modelo;
 
-public class Traje {
+public abstract class  Traje {
 
 	private String material;
 	private static String color;
@@ -185,5 +185,7 @@ public class Traje {
 			return t;
 		}
 	}
+	//Metodo abstacto
+	public abstract double aumentarOxigeno();
 
 }

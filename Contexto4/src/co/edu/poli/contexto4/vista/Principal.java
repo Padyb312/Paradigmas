@@ -46,8 +46,8 @@ public class Principal {
 
 		// Traje
 
-		Traje traje1 = new Traje("Kevlar-Polímero", 25.0, 1.80, "T-505", "Houston", astronauta1, 8.0, 120.0, 100.0,
-				85.0, 5.0);
+		TrajeExploracion traje1 = new TrajeExploracion("Kevlar-Polímero", 25.0, 1.80, "T-505", "Houston", astronauta1,
+				8.0, 120.0, 100.0, 85.0, 5.0);
 		/*
 		 * System.out.println("MOficacion De Color"); Traje.setColor("Blanco");
 		 * System.out.println(traje1.getNumero_traje() + " " + Traje.getColor());
@@ -79,7 +79,7 @@ public class Principal {
 
 		// Combustible
 		Combustible combustible1 = new Combustible("Hidrógeno Líquido", "Shell Aero", "20/01/2026", "Refinería Houston",
-				 5000.0, 0.07, 350.0, 12000.0, "Logística Aero", 6000.0, 5000.0);
+				5000.0, 0.07, 350.0, 12000.0, "Logística Aero", 6000.0, 5000.0);
 		/*
 		 * // Sobrescritura System.out.println(traje1.calcularProtecion());
 		 * System.out.println(trajeCombate1.calcularProtecion());
@@ -124,25 +124,62 @@ public class Principal {
 		// Punto1
 		TrajeExploracion trajeExploracion1 = new TrajeExploracion("Kevlar-Polimero", 28.5, 1.80, "TE-202",
 				"Cabo Canaveral", astronauta1, 8.5, 7.0, 80.0, 85.0, 70.0);
-		Traje[] trajes = new Traje[5];
-		trajes[0] = traje1;
-		trajes[1] = trajeCombate1;
-		trajes[2] = trajeExploracion1;
-
-		System.out.println(trajes[0].calcularProtecion());
-		System.out.println(trajes[1].calcularProtecion());
-
-		// Punto2
-		System.out.println("\n=== MÉTODO 1: compararProteccion(Traje t) ===");
-		traje1.compararProteccion(trajeCombate1);
-
-		System.out.println("\n=== MÉTODO 2: trajeConMayorOxigeno(Traje t) ===");
-		Traje resultado = trajeExploracion1.trajeConMayorOxigeno(trajeCombate1);
-		System.out.println("Traje con mayor oxígeno: [" + resultado.getNumero_traje() + "] - Oxígeno: "
-				+ resultado.getCantidad_oxigeno() + " L");
+		/*
+		 * Traje[] trajes = new Traje[5]; trajes[0] = traje1; trajes[1] = trajeCombate1;
+		 * trajes[2] = trajeExploracion1;
+		 * 
+		 * System.out.println(trajes[0].calcularProtecion());
+		 * System.out.println(trajes[1].calcularProtecion());
+		 * 
+		 * // Punto2
+		 * System.out.println("\n=== MÉTODO 1: compararProteccion(Traje t) ===");
+		 * traje1.compararProteccion(trajeCombate1);
+		 * 
+		 * System.out.println("\n=== MÉTODO 2: trajeConMayorOxigeno(Traje t) ===");
+		 * Traje resultado = trajeExploracion1.trajeConMayorOxigeno(trajeCombate1);
+		 * System.out.println("Traje con mayor oxígeno: [" + resultado.getNumero_traje()
+		 * + "] - Oxígeno: " + resultado.getCantidad_oxigeno() + " L");
+		 */
 		// Punto3
 		// Atributo estatico en clase traje linea 12 nivel de protecion paquete modelo
 		// Metodo creado en traje paquete modelo
 		// Clase sin herencia combustible paquete modelo
+
+		// Actividad_7
+		
+		//crear
+		ImplementacionOperacionCRUD operaciones = new ImplementacionOperacionCRUD();
+		System.out.println(operaciones.crear(trajeExploracion1));
+		System.out.println(operaciones.crear(trajeCombate1));
+
+		//Mostra_uno
+		System.out.println(operaciones.leeruno(trajeCombate1.getNumero_traje()));
+		
+		//Mostra_todos
+		Traje[] trajes= operaciones.leerTodos();
+		for (int i = 0; i < trajes.length; i++) {
+			System.out.println("Indice = "+i+" "+trajes[i]);
+		}
+		
+		//Modificar_Actibutos
+		System.out.println(operaciones.crear(traje1));
+		System.out.println("--------------Traje a modificar---------");
+		System.out.println(operaciones.leeruno(traje1.getNumero_traje()));
+		System.out.println("----------------------------------------");
+		TrajeExploracion trajeExploracion2 = new TrajeExploracion("Kevlar", 28, 1.60, "TE-505",
+				"Cabo nuevo", astronauta1, 8.3, 5.4, 85.0, 65.0, 40.0);
+		System.out.println(operaciones.modificar(traje1.getNumero_traje(), trajeExploracion2));
+		System.out.println("----------Modificaiones------------------");
+		System.out.println(operaciones.leeruno("TE-505"));
+		
+		//Eliminar
+		System.out.println("---------Arreglo sin eliminar----------");
+		trajes= operaciones.leerTodos();
+		for (int i = 0; i < trajes.length; i++) {
+			System.out.println("Indice = "+i+" "+trajes[i]);
+		}
+		System.out.println(operaciones.eliminar(trajeCombate1.getNumero_traje()));
+		
+		
 	}
 }
