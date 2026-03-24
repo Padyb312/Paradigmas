@@ -179,7 +179,17 @@ public class Principal {
 			System.out.println("Indice = "+i+" "+trajes[i]);
 		}
 		System.out.println(operaciones.eliminar(trajeCombate1.getNumero_traje()));
-		
-		
+		System.out.println("---------Arreglo con eliminaciones----------");
+		trajes= operaciones.leerTodos();
+		for (int i = 0; i < trajes.length; i++) {
+			System.out.println("Indice = "+i+" "+trajes[i]);
+		}
+		//Agrega_en_null
+		operaciones.crear(trajeCombate1);
+		System.out.println("agrega el primero que este en null");
+		trajes= operaciones.leerTodos();
+		for (int i = 0; i < trajes.length; i++) {
+			System.out.println("Indice = "+i+" "+trajes[i]);
+		}
 	}
 }
