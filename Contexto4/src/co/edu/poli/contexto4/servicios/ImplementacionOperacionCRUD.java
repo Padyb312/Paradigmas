@@ -1,8 +1,14 @@
 package co.edu.poli.contexto4.servicios;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 import co.edu.poli.contexto4.modelo.Traje;
 
-public class ImplementacionOperacionCRUD implements OperacionCRUD {
+public class ImplementacionOperacionCRUD implements OperacionCRUD ,OperacionArchivo {
 
 	private Traje[] trajes = new Traje[2];
 	private int contador = 0;
@@ -81,5 +87,37 @@ public class ImplementacionOperacionCRUD implements OperacionCRUD {
 		}
 		return null;
 	}
+	@Override
+    public String serializar(Traje[] Trajes, String path, String name) {
+        try {
+            FileOutputStream fos = new FileOutputStream(path + name);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(Trajes);
+            oos.close();
+            fos.close();
+            return "File create!!";
+        } catch (IOException ioe) {
+            return "Error file " + ioe.getMessage();
+        }
+    }
+
+    @Override
+    public Traje[] deserializar(String path, String name) {
+        Traje[] a = null;
+        try {
+            FileInputStream fis = new FileInputStream(path + name);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            a = (Traje[]) ois.readObject();
+
+            ois.close();
+            fis.close();
+        } catch (IOException ioe) {
+            System.err.println(ioe.getMessage());
+        } catch (ClassNotFoundException c) {
+            System.err.println(c.getMessage());
+        }
+        return a;
+    }
 
 }

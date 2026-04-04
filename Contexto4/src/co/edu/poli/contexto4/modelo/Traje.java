@@ -1,6 +1,8 @@
 package co.edu.poli.contexto4.modelo;
 
-public abstract class  Traje {
+import java.io.Serializable;
+
+public abstract class  Traje implements Serializable {
 
 	private String material;
 	private static String color;
