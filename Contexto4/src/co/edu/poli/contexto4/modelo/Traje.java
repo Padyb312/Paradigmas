@@ -45,7 +45,7 @@ public abstract class Traje implements Serializable{
 
 	/** Horas totales que el traje ha sido operado */
 	private double tiempo_uso;
-
+	
 	/** Volumen máximo de oxígeno que puede almacenar el sistema de soporte vital */
 	private double capacidad_oxigeno;
 
