@@ -1,11 +1,13 @@
 package co.edu.poli.contexto4.vista;
 
 import co.edu.poli.contexto4.servicios.*;
+
+import java.io.Serializable;
 import java.util.Scanner;
 
 import co.edu.poli.contexto4.modelo.*;
 
-public class Principal {
+public class Principal implements Serializable{
 	public static void main(String[] args) {
 
 		// Astronauta
@@ -25,8 +27,8 @@ public class Principal {
 			System.out.println("3. Mostar Todos");
 			System.out.println("4. Modificar Traje");
 			System.out.println("5. Eliminar");
-			System.out.println("6. Serializar");
-			System.out.println("7. Deserializar");
+			System.out.println("6. Serializar Guardar");
+			System.out.println("7. Deserializar Buscar");
 			System.out.println("8. Salir");
 			// Toma_la_opcion
 			opcion = teclado.nextInt();
@@ -265,18 +267,19 @@ public class Principal {
 				System.out.println(operaciones.eliminar(teclado.next()));
 				break;
 			case 6:// Serializar
-				System.out.println("Ingrese path (String)");
-				String patch = teclado.next();
-				System.out.println("Ingrese name (String)");
-				String name = teclado.next();
-				System.out.println(operaciones.serializar(operaciones.leerTodos(), patch, name));
+				String patch = "";
+				String name = "Trajes";
+				Traje[] trajes = operaciones.leerTodos();
+				System.out.println(operaciones.serializar(trajes, patch, name));
 				break;
 			case 7:// Deserializar
-				System.out.println("Ingrese path (String)");
-				String patch2 = teclado.next();
-				System.out.println("Ingrese name (String)");
-				String name2 = teclado.next();
-				System.out.println(operaciones.deserializar(patch2, name2));
+				String patch2 = "";
+				String name2 = "Trajes";
+				Traje [] trajes0 = operaciones.deserializar(patch2, name2);
+				for (int i = 0; i < trajes0.length; i++) {
+				operaciones.crear(trajes0[i]);
+				}
+				System.out.println("Deserializado");
 				break;
 			case 8:// Salir
 				System.out.println("Saliendo");

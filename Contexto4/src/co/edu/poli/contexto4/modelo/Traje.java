@@ -11,7 +11,7 @@ import java.io.Serializable;
  * 
  * @version 1.0
  */
-public abstract class Traje implements Serializable {
+public abstract class Traje implements Serializable{
 
 	/** Material principal de fabricación del traje */
 	private String material;
