@@ -24,7 +24,7 @@ public interface OperacionArchivo {
 	 * @return Un mensaje de confirmación que indica si el proceso de guardado fue
 	 *         exitoso o fallido.
 	 */
-	public String serializar(Traje[] Trajes, String path, String name);
+	public String serializar(Traje[] Trajes, String path, String name) throws Exception;
 
 	/**
 	 * Lee un archivo previamente serializado y reconstruye el arreglo de objetos
@@ -35,5 +35,5 @@ public interface OperacionArchivo {
 	 * @return Un arreglo de {@link Traje} con la información recuperada del
 	 *         archivo, o null si ocurre un error durante la lectura.
 	 */
-	public Traje[] deserializar(String path, String name);
+	public Traje[] deserializar(String path, String name) throws Exception;
 }

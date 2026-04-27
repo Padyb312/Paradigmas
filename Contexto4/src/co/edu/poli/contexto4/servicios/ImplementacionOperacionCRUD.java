@@ -127,7 +127,7 @@ public class ImplementacionOperacionCRUD implements OperacionCRUD, OperacionArch
 	 * @return Mensaje de estado de la operación de guardado.
 	 */
 	@Override
-	public String serializar(Traje[] Trajes, String path, String name) {
+	public String serializar(Traje[] Trajes, String path, String name) throws Exception {
 		try {
 			FileOutputStream fos = new FileOutputStream(path + name);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -148,7 +148,7 @@ public class ImplementacionOperacionCRUD implements OperacionCRUD, OperacionArch
 	 * @return Arreglo de {@link Traje} recuperado o null en caso de error.
 	 */
 	@Override
-	public Traje[] deserializar(String path, String name) {
+	public Traje[] deserializar(String path, String name) throws Exception {
 		Traje[] a = null;
 		try {
 			FileInputStream fis = new FileInputStream(path + name);
